@@ -1,0 +1,208 @@
+.login-main-wrapper{
+    position: relative;
+    min-height: 100%;
+    padding: 0 85px;
+}
+.login-hook{
+    background: url(../images/login-hook.png) no-repeat center center;
+    width: 68px;
+    height: 64px;
+    display: inline-block;
+    position: relative;
+    z-index: 10;
+    left: 50%;
+    top: 58px;
+    transform: translateX(-50%);
+  }
+
+.login-form-wrapper input{
+    outline: 0;
+    min-width: 400px;
+    border:none;
+    border-radius: 10px;
+    background-color: #ebeef3;
+    padding: 20px 25px;
+    color: #232425;
+    font-family: $fontBook;
+    font-size: 16px;
+    line-height: 18px;
+}
+
+.login-box{
+    background-color: #f8f8f8;
+    min-height: 720px;
+    margin-bottom: 78px;
+    margin-top:28px;
+    border-radius: 10px;
+    @include box-shadow(0 ,2px ,7px, #9b9b9b);
+}
+
+.login-footer-wrapper{
+    // position: absolute;
+    // bottom: 0;
+    // left: 0;
+    // right: 0;
+    // width: 100%;
+
+    .allrights h3{
+        color: #3b6cb4;
+    }
+
+    .dashboard-sm{
+        text-align:right;
+    }
+
+    .policy {
+        text-align:center;
+    
+        ul li a{
+            color: #3b6cb4;
+        }
+    }
+}
+
+.login-logo-wrapper{
+    padding: 70px 0 60px;
+}
+
+.login-form-wrapper{
+
+    .form-group{
+        margin-bottom: 28px;
+    }
+
+    .btn-login{
+        padding: 0;
+        color: #060702;
+        font-size: 15px;
+        height: 60px;
+        line-height: 58px;
+        border-radius: 10px;
+        width: 100%;
+        margin-top: 20px;
+        background-color: #c6d250;
+        @include box-shadow(0 ,2px ,7px, #9b9b9b);
+    }
+    .login-form{
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+
+/* PLACEHOLDER COLOR FOR LOGIN */
+.login-form-wrapper {
+   @include placeholder {
+       color:#232425;
+   }
+}
+
+// START REMEMBER ME CHECKBOX BUTTON
+.remember-checkbox{
+    input{
+        min-width:0;
+    }
+
+    span.text{
+        font-family: $fontBook;
+        font-size: 16px;
+        color: #232323;
+        position: relative;
+        bottom: 4px;
+    }
+
+    .container {
+        display: inline-block;
+        position: relative;
+        padding-left: 28px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        min-height: 28px;
+        max-width:200px;
+    }
+
+    /* Hide the browser's default checkbox */
+    .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 20px;
+        width: 20px;
+        background-color: #ece7e7;
+        border:1px solid rgba(0,0,0,0.4);
+        @include transition (all 0.2s ease-in-out);
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container:hover input ~ .checkmark {
+        background-color: #d6d0d0;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .container input:checked ~ .checkmark {
+        background-color: #525252;
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .container input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .container .checkmark:after {
+        left: 6px;
+        top: 2px;
+        width: 7px;
+        height: 12px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    .checkbox-sort-wrapper{
+        display: inline-block;
+    }
+
+    .checkbox-action-wrapper{
+        display: inline-block;
+    }
+}
+// END REMEMBER ME CHECKBOX BUTTON
+.forgot-pw{
+    cursor: pointer;
+    float: right;
+
+    a{
+        text-decoration: none;
+    }
+
+    span{
+        font-family: $fontBook;
+        font-size: 15px;
+        line-height: 18px;
+        color: #3d6db4;
+    }
+}

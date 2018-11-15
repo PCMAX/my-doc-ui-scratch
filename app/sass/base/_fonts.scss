@@ -1,0 +1,32 @@
+/*FONT SIZES AND FONT FAMILY---START */
+@font-face {
+  font-family: 'AvenirBook';
+  src: url('../fonts/AvenirLTStd-Book.woff') format('woff'),
+      url('../fonts/AvenirLTStd-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirRoman';
+  src: url('../fonts/AvenirLTStd-Roman.woff') format('woff'),
+      url('../fonts/AvenirLTStd-Roman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirLight';
+  src: url('../fonts/AvenirLTStd-Light.woff') format('woff'),
+      url('../fonts/AvenirLTStd-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'AvenirMedium';
+  src: url('../fonts/AvenirLTStd-Medium.woff') format('woff'),
+      url('../fonts/AvenirLTStd-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}

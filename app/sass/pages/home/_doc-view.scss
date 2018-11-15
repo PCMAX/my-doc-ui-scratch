@@ -1,0 +1,102 @@
+.document-view-wrapper{
+    background: #f8f8f8;
+    border-radius: 4px;
+    border: $btnborder;
+    height: calc(100vh - 230px);
+    
+    .document-view-main{
+        height: 99.5%;
+    }
+
+    .preview-thumbnail{
+        border: $btnborder;
+        background: #fff;
+        height: 32.9%;
+        margin:3px 0 0 3px;
+        position: relative;
+
+        &:hover{
+            border: 1px solid #3b6cb4;
+            cursor: pointer;
+        }
+
+        span{
+            font-family: $fontLight;
+            font-size: 14px;
+            color: #000;
+            position: absolute;
+            bottom: 5px;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .main-doc-view-wrapper{
+        padding-top: 3px;
+    }
+
+    .main-doc-view{
+        height: 100%;
+        border: $btnborder;
+        background: #fff;
+        margin: 0 3px 3px 3px;
+        position: relative;
+    }
+}
+
+//MAIN DOC PREVIEW CONTROLLERS
+.main-doc-controllers-wrapper{
+    position: absolute;
+    bottom: 0;
+    width:100%;
+
+    .left{
+        position: absolute;
+        left: 5px;
+        bottom: 0;
+    }
+
+    .right{
+        position: absolute;
+        right: 5px;
+        bottom: 0;
+    }
+
+    .center{
+        position: absolute;
+        bottom: 0;
+        left:50%;
+        transform: translateX(-50%);
+    }
+
+    .btn-arrows{
+        background: #fff;
+        padding: 0;
+    }
+}
+
+
+//RIGHT ACTIONS BUTTONS
+.right-action-buttons-wrapper{
+    height: calc(100vh - 230px);
+
+    .right-action-buttons{
+        background: #f8f8f8;
+        border-radius: 4px;
+        border: $btnborder;
+        height: 100%;
+        margin-left: 3px;
+        margin-right: 2px;
+        padding-top:3px;
+    }
+}
+
+.preview-thumbnail-wrapper{
+    position: relative;
+
+    &.nav{
+        display: block;
+        // flex-wrap: auto;
+        // max-height: calc(100% - 400px);
+    }
+}

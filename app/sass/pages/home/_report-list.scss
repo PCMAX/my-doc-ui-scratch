@@ -1,0 +1,145 @@
+.checkbox-wrapper{
+    padding:10px 7px;
+    min-height: 100%;
+    border: $btnborder;
+    background: #f8f8f8;
+    border-radius: 4px;
+    margin-right: 3px;
+    margin-left:1px;
+
+    // CHECKBOX STYLING
+    .container-checkbox {
+        display: inline-block;
+        padding-left: 35px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        min-height: 28px;
+        // max-width:180px;
+
+        .text{
+            color: #000;
+            font-size: 14px;
+            word-wrap: break-word;
+            font-family: $fontBook;
+            line-height: 20px;
+            letter-spacing: 0;
+            position: relative;
+            bottom: 2px;
+            width:128px;
+            display: inline-block;
+        }
+    }
+
+    /* Hide the browser's default checkbox */
+    .container-checkbox input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+    /* Create a custom checkbox */
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #fff;
+        border-radius: 50%;
+        border: 1px solid rgb(74, 160, 254);
+        @include transition (all 0.2s ease-in-out);
+    }
+
+    /* On mouse-over, add a grey background color */
+    .container-checkbox:hover input ~ .checkmark {
+        background-color: #eee;
+    }
+
+    /* When the checkbox is checked, add a blue background */
+    .container-checkbox input:checked ~ .checkmark {
+        background-color: rgb(0, 122, 255);
+    }
+
+    /* Create the checkmark/indicator (hidden when not checked) */
+    .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+    }
+
+    /* Show the checkmark when checked */
+    .container-checkbox input:checked ~ .checkmark:after {
+        display: block;
+    }
+
+    /* Style the checkmark/indicator */
+    .container-checkbox .checkmark:after {
+        left: 8px;
+        top: 4px;
+        width: 7px;
+        height: 12px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        -webkit-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+}
+
+.dynamic-main-wrapper{
+    margin-top:4px;
+}
+.report-list-checkboxes{
+    height: calc(100vh - 230px);
+}
+
+
+//SORT ICON STYLING
+.checkbox-sort-wrapper{
+    position: absolute;
+    right: 25px;
+    top: -4px;
+
+    .sort-icon{
+        cursor: pointer;
+    }
+}
+
+//REPORT LIST ACTION DOWN PRINT DELETE STYLING
+.checkbox-action-wrapper{
+    display: none;
+
+    .icon{
+        display: inline-block;
+
+        &.btn{
+            padding: 0;
+            background: transparent;
+            border-radius: 8px;
+
+            &:hover{
+                background: #dcdcdc;
+            }
+        }
+    }
+
+    position: absolute;
+    right:0;
+    top:46%;
+    transform: translateY(-50%);
+}
+
+.report-list-checkboxes .checkbox-block{
+    position: relative;
+}
+
+.report-list-checkboxes{
+    position: relative;
+}

@@ -1,0 +1,102 @@
+.mydocs-modal{
+    .modal-header{
+        background: #3b6cb4;
+        border-radius: 0;
+        padding: 15px 30px ;
+
+        .close{
+            color:#fff;
+            text-shadow: none;
+            font-weight: normal;
+            transition:all 0.3s ease-in-out;
+            font-size: 28px;
+            outline:0;
+
+            &:hover,&:focus{
+                color:#fff;
+                opacity: 1;
+            }
+        }
+    }
+
+    .modal-header h5{
+        font-family: $fontLight,sans-serif;
+        font-size: 17px;
+        color: #fdfdfe;
+        line-height: 32px;
+    }
+
+    .modal-content{
+        border: none;
+    }
+
+    .modal-body{
+        background: #fff;
+        padding: 35px 30px 25px;
+    }
+
+    .modal-footer{
+        background: #fff;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+        justify-content: center;
+        border-top:none;
+        padding: 15px 15px 50px;
+    }
+
+    &#uploadModal .btnm{
+        min-width: 295px;
+        min-height: 42px;
+    }
+
+    .btn-modal{
+        background-color: #3b6cb4;
+        color: #fff;
+        font-size: 15px;
+        font-family: $fontLight;
+        text-transform: capitalize;
+        border-radius: 4px;
+    }
+
+
+    @include respond-to (mobileMin){
+        .modal-dialog{
+            max-width: 1000px;
+        }
+    }
+}
+
+#uploadModal {
+
+    form{
+        margin-bottom: 50px;
+        position: relative;
+    }
+    .dropzone.dz-clickable{
+        width: 100%;
+        height: 350px;
+        border: 1px solid #3b6cb4;
+        border-radius: 7px;
+        overflow-y: auto;
+    }
+
+    .dz-default.dz-message{
+        font-size: 17px;
+        position: absolute;
+        left: 50%;
+        margin: 0;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        font-family: $fontLight;
+        color:#000;
+    }
+
+    .select{
+        text-align: center;
+        font-size: 17px;
+        font-family: $fontLight;
+        color:#000;
+    }
+}

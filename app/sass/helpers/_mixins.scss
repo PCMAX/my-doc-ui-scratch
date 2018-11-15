@@ -1,0 +1,180 @@
+@mixin respond-to($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: 568px) { @content; }
+  }
+  @if $media == mobileMin {
+    @media only screen and (min-width: 576px) { @content; }
+  }
+  @else if $media == phablet {
+    @media only screen and (max-width: 767px) { @content; }
+  }
+  @else if $media == tabs {
+    @media only screen and (max-width: 1023px) { @content; }
+  }
+  @else if $media == tab-ls {
+    @media only screen and (max-width: 1024px) { @content; }
+  }
+  @else if $media == desktop {
+    @media only screen and (max-width: 1200px) { @content; }
+  }
+  @else if $media == slarge {
+    @media only screen and (max-width: 1320px) { @content; }
+  }
+  @else if $media == xlarge {
+    @media only screen and (max-width: 1440px) { @content; }
+  }
+  @else if $media == xlargemin {
+    @media only screen and (min-width: 1600px) { @content; }
+  }
+  @else if $media == xxlargemax {
+    @media only screen and (max-width: 1680px) { @content; }
+  }
+}
+
+//CCS for IE 10 and After VERSIONS
+@mixin ie10after{
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
+    @content;
+  }
+}
+//IE 8 and Lower
+@mixin browser($browsers: Mozilla) {
+  @each $browser in $browsers {
+    html[data-browser*="#{$browser}"] & {
+      @content;
+    }
+  }
+}
+
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+@mixin box-shadow($top, $left, $blur, $color, $inset:"") {
+      -webkit-box-shadow:$top $left $blur $color #{$inset};
+         -moz-box-shadow:$top $left $blur $color #{$inset};
+          -ms-box-shadow:$top $left $blur $color #{$inset};
+           -o-box-shadow:$top $left $blur $color #{$inset};
+              box-shadow:$top $left $blur $color #{$inset};
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+       -o-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// generic transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+// rotate
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+// scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+// translate
+@mixin translate ($x, $y) {
+  @include transform(translate($x, $y));
+}
+// skew
+@mixin skew ($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+@mixin transform-origin ($origin) {
+  -moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+/*-----------Table Mixin-----------*/
+
+@mixin li-width($col, $width) {
+    #{$col} {
+        width: $width;
+    }
+}
+
+@mixin list-columns($widths...) {
+    $n: 1;
+    $var: "&:nth-child(" + $n + ")";
+    @each $width in $widths {
+        @include li-width($var, $width);
+        $n: $n + 1;
+        $var: "&:nth-child(" + $n + ")";
+    }
+}
+
+
+/*-----------Animation Mixin-----------*/
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content; 
+  }
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+  @-ms-keyframes #{$name} {
+    @content;
+  }
+  @keyframes #{$name} {
+    @content;
+  } 
+}
+
+
+@mixin animation ($stuff ) {
+  -webkit-animation: $stuff;
+  -moz-animation: $stuff;
+  -ms-animation: $stuff;
+  animation: $stuff;
+}
+
+
+/*-----------Gradient Mixin-----------*/
+@mixin linearGradientDiagonal($top, $bottom){
+  background: $top; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, $top 0%, $bottom 100%); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(top right, $top 0%, $bottom 100%); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(top right, $top 0%, $bottom 100%); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to top right, $top 10%, $bottom 70%); /* Standard syntax */
+}
+@mixin linearGradientTable($top, $bottom){
+  background: $top; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, $top 20%, $bottom 80%); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(top right, $top 20%, $bottom 80%); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(top right, $top 20%, $bottom 80%); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to top right, $top 20%, $bottom 80%); /* Standard syntax */
+}
+
+@mixin placeholder {
+  ::-webkit-input-placeholder { @content;}
+  :-moz-placeholder           { @content;}
+  ::-moz-placeholder          { @content;opacity:1;}
+  :-ms-input-placeholder      { @content;}
+}

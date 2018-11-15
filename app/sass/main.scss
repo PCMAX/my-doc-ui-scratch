@@ -1,0 +1,33 @@
+//BOOTSTRAP 4.1
+@import 'plugin/bootstrap/bootstrap';
+@import 'plugin/bootstrap/bootstrap-grid';
+@import 'plugin/bootstrap/bootstrap-reboot';
+
+//SELECT2
+@import 'plugin/select2/select2';
+
+//PERFECT-SCROLLBAR
+@import 'plugin/perfect-scrollbar/perfect-scrollbar';
+
+@import 'base/fonts';
+@import 'base/reset';
+
+@import 'helpers/mixins';
+@import 'helpers/variables';
+@import 'helpers/ripple-btns';
+
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sidemenu';
+
+//PAGES
+@import 'pages/landing';
+@import 'pages/login';
+@import 'pages/home/home';
+@import 'pages/home/top-section';
+@import 'pages/home/report-list';
+@import 'pages/home/doc-view';
+
+
+//Modals
+@import 'pages/modals/upload-modal';

@@ -1,0 +1,82 @@
+.right-content-wrapper{
+    position: relative;
+    min-height: 0;
+    z-index: 58;
+}
+.content {
+    padding-left: 73px;
+    margin-top: 60px;
+    @include transition(all 0.4s ease);
+    position: relative;
+    // z-index: 100;
+}
+.right-content-toggle .content{
+    padding-left: 243px;
+}
+.main-wrapper{
+    overflow: hidden;
+    overflow-y: hidden;
+}
+.home-wrapper{
+    overflow: hidden;
+}
+
+// CONTENT SLIDE LEFT AND RIGHT ARROWS STYLING
+.dynamic-main-wrapper:hover span.slide-left,
+.dynamic-main-wrapper:hover span.slide-right{
+    visibility: visible;
+    opacity:0.8;
+}
+.document-view-wrapper span.slide-right{
+    position: absolute;
+    right:0;
+    top:50%;
+    @include transform(translateY(-50%));
+    z-index: 100;
+    height: 80px;
+    width:28px;
+    background: url('../images/doc-action/right-doc.png')#d1d8e4 no-repeat center center;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(all 0.3s ease-in-out);
+    cursor: pointer;
+
+    &.slided-right{
+        margin-top: -40px;
+        @include transform (rotate(180deg));
+    }
+}
+
+.document-view-wrapper span.slide-left{
+    position: absolute;
+    left:0;
+    top:50%;
+    @include transform(translateY(-50%));
+    z-index: 100;
+    height: 80px;
+    width:28px;
+    background: url('../images/doc-action/left-doc.png')#d1d8e4 no-repeat center center;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(all 0.3s ease-in-out);
+    cursor: pointer;
+
+    &.slided-left{
+        margin-top: -40px;
+        @include transform (rotate(180deg));
+    }
+}
+// CONTENT SLIDE LEFT and RIGHT IN ACTION
+.document-view-wrapper{
+    position: relative;
+    overflow: hidden;
+    @include transition (all 0.5s ease-in-out);
+}
+.d-none-right-btns{
+    display: none;
+}
+
+.d-none-reportlist-checkboxes{
+    display: none;
+}
+
