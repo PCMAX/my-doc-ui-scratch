@@ -1,0 +1,105 @@
+.header {
+    position: relative;
+}
+.header-wrapper .menu-toggle{
+    display: inline-block;
+    cursor: pointer;
+    margin-top:6px;
+    margin-left:10px;
+    padding:15px;
+
+    img{
+        width:20px;
+        height: auto;
+    }
+}
+.right-content-toggle .header-wrapper{
+    padding-left: 240px;
+}
+
+// USER LOGIN TOP HEADER
+.header-wrapper{
+    width: 100%;
+    height: 60px;
+    background: $headerFooterbg;
+    height: 60px;
+    position: fixed;
+    top: 0;
+    padding-left: 70px;
+    z-index: 59;
+    @include transition(all 0.4s ease);
+}
+.Cuser-wrapper{
+    position: absolute;
+    height: 50px;
+    right:0;
+    top:5px;
+}
+.user-toggle ul li{
+    list-style-type: none;
+
+    a{
+        text-decoration: none;
+        display: block;
+        color:$white;
+        padding: 10px 15px;
+
+        span{
+            position: relative;
+            top: 2px;
+        }
+    }
+
+    img{
+        margin-right:10px;
+    }
+}
+.user-toggle{
+    overflow: hidden;
+    height: 0;
+    visibility: hidden;
+    @include transition (all 0.4s ease-in-out);
+    background: $headerFooterbg;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    margin-top:5px;
+
+    ul{
+        padding: 10px 0;
+        margin:0;
+    }
+}
+span.passSpan{
+    display: block;
+    height: 1px;
+    width: 63%;
+    position: relative;
+    left: 45px;
+    top: 3px;
+    background: rgba(255,255,255,0.6);
+}
+.usernme_lable{
+    line-height: 50px;
+    color:$white;
+    display: inline-block;
+}
+.user {
+    padding-right: 20px;
+    padding-left: 20px;
+    border-left:1px solid $white;
+    font-family: $fontBook;
+    cursor: pointer;
+
+    .img-user{
+        display: inline-block;
+        position: relative;
+        bottom: 1px;
+        margin-right:6px;
+    }
+}
+// USER TOGGLE
+.user-toggle.display{
+    height:110px;
+    visibility: visible;
+}
+// USER LOGIN TOP HEADER

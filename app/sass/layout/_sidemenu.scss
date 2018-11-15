@@ -1,0 +1,154 @@
+.side-menu-wrapper{
+   background: $sideMenubg;
+   height: 100vh;
+   width: 70px;
+   position: fixed;
+   z-index: 60;
+   float: left;
+   margin:0;
+   @include transition(all 0.4s ease);
+}
+
+.side-menu-wrapper.menu-toggle{
+    width: 240px;
+}
+
+.logo-wrapper {
+    height: 60px;
+    text-align: center;
+    padding: 16px 13px;
+    overflow: hidden;
+    background: url('../images/cloud-logo.png')no-repeat center center;
+    background-size:42px;
+    @include transition(all 0.4s ease);
+
+    img{
+        display: none;
+    }
+}
+a.logo-link{
+    display: block;
+    cursor: pointer;
+}
+
+.menu-toggle .logo-wrapper{ 
+    background-image: none;
+
+    img{
+        display: block;
+        width:175px;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+// NAVIGATION
+.side-menu{
+    overflow: hidden;
+}
+.side-menu ul.nav{
+    padding:10px 0 0;
+    margin:0;
+    width:240px;
+    display: block;
+}
+.side-menu ul.nav li{
+    list-style-type: none;
+    padding: 12px 22px;
+    position: relative;
+
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.08);
+    }
+
+    a{
+        color:$white;
+        font-family: $fontBook;
+        font-size: 16px;
+        text-decoration: none;
+        position: absolute;
+        left: 0;
+        top: 3px;
+        width: 100%;
+        padding-left: 70px;
+        line-height: 40px;
+    }
+}
+.side-menu ul.nav li a{
+    display: none;
+}
+.side-menu ul.nav li{
+    cursor: pointer;
+}
+.menu-toggle .side-menu ul.nav li a{
+    display: block;
+}
+.nav-image-wrapper{
+    display: inline-block;
+    margin-right: 20px;
+
+    img{
+        width:28px;
+        height: auto;
+    }
+}
+
+// COLLAPSE NAVIGATION ITEMS
+.side-menu .nav-collapse{
+
+    ul.collapse-items{
+        margin:0;
+        padding: 0;
+        max-height: 350px;
+        position: relative;
+        overflow: auto;
+
+        li{
+            list-style-type: none;
+            padding: 0;
+
+            a{
+                text-decoration: none;
+                display: block;
+                position: initial;
+                padding-left: 78px;
+            }
+        }
+    }
+
+    .ps__rail-x,
+    .ps__rail-y {
+        opacity: 0.6;
+    }
+    
+    .ps .ps__rail-x:hover, .ps .ps__rail-y:hover, .ps .ps__rail-x:focus, .ps .ps__rail-y:focus, .ps .ps__rail-x.ps--clicking, .ps .ps__rail-y.ps--clicking {
+        background-color: #2e4f81;
+    }
+
+    .ps__rail-y:hover > .ps__thumb-y, .ps__rail-y:focus > .ps__thumb-y, .ps__rail-y.ps--clicking .ps__thumb-y {
+        width: 6px;
+    }
+}
+
+
+
+.nav li a .chevron:after{
+    content: "\f077";
+} 
+
+.nav li a.collapsed .chevron:after {
+    content: "\f078";   
+}
+.side-menu .chevron:after{
+    position: absolute;
+    right:30px;
+    top:11px;
+}
+
+// CONTACT SUPPORT
+.side-menu-wrapper .side-menu li.contact-support{
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    overflow: hidden;
+}

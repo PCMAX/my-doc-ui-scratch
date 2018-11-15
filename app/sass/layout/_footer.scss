@@ -1,0 +1,75 @@
+.footer {
+    height: 45px;
+    width:100%;
+    position: fixed;
+    z-index: 998;
+    bottom:0;
+    background: $headerFooterbg;
+    padding-left: 70px;
+    @include transition(all 0.4s ease);
+}
+.right-content-toggle .footer{
+    padding-left: 240px;
+}
+.allrights h3{
+    color:$white;
+    margin: 0;
+    font-size: 14px;
+    line-height: 45px;
+    text-align: center;
+    font-family: $fontBook;
+}
+.dashboard-sm {
+    line-height: 42px;
+}
+.dashboard-sm ul{
+    padding: 0;
+    margin:0;
+
+    li{
+        list-style-type: none;
+        display: inline-block;
+        padding: 0 4px;
+
+        a{
+            display: block;
+            line-height: 20px;
+        }
+    }
+}
+.dashboard-sm ul li a img{
+    width: 24px;
+    height: auto;
+}
+.policy{
+    text-align: center;
+
+    ul{
+        margin:0;
+        padding:0;
+
+        li{
+            list-style-type: none;
+            display: inline-block;
+            padding: 0 5px;
+
+            a{
+                color: $white;
+                text-decoration: none;
+                display: block;
+                font-size: 14px;
+                line-height: 45px;
+                font-family: $fontBook;
+            }
+        }
+
+        span{
+            width: 2px;
+            background: rgb(255, 255, 255);
+            height: 18px;
+            display: inline-block;
+            position: relative;
+            top: 4px;
+        }
+    }
+}
